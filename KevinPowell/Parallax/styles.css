@@ -1,0 +1,18 @@
+:root {
+    --bg-color: cyan;
+}
+
+body {
+    background-image: url(bg.jpg);
+    background-size: 120vw;
+    background-repeat:no-repeat;
+    background-position: center -20px;
+    background-attachment: fixed;
+    height: 400vh;
+}
+
+.left-menu {
+    height: 100%;
+    width: 20vw;
+    /* background: linear-gradient(#e66465, #9198e5); */
+}
