@@ -13,14 +13,13 @@
 }
 
 body {
-    font-size: 2rem;
+    font-size: 3.6rem;
     background-image: url(https://www.multimed.dk/wp-content/uploads/2021/11/MultiMED_Logo_400px.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50vw;
     background-attachment: fixed;
     background-color: var(--clr-bg-color);
-    background-blend-mode: hue;
     margin: 0;
     padding: 0;
 }
@@ -50,15 +49,16 @@ body {
 }
 
 .container header h1::before {
-    --size: .6rem;
+    --size: .2em;
     content: '';
     position: absolute;
-    top: 1.3rem;
-    left: 6.9rem;
+    top: 0.4em;
+    left: 2.3em;
     background-color: red;
     border-radius: 50%;
     width: var(--size);
     height: var(--size);
+    box-shadow: 1px 1px 3px 1px hsl(0, 10%, 10%) ;
 }
 
 header nav ul {
@@ -83,4 +83,30 @@ a {
 a:hover {
     width: 30rem;
     text-decoration: none;
+}
+
+
+.login {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;;
+    width: 300px;
+    border: 1px solid #333;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    overflow: hidden;
+    font-size: 2rem;
+}
+
+.login-header, .login-footer {
+    background-color: var(--clr-bg-header);
+    text-align: center;
+}
+
+.form-group {
+    display:flex;
+    flex-direction: column;
+    margin: 0.3rem;
 }
