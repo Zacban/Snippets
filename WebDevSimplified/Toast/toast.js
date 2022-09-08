@@ -121,7 +121,7 @@ export default class Toast {
         }
     }
 
-    set pauseOnHover(value) {
+    set pauseOnFocusLoss(value) {
         if (value) {
             document.addEventListener('visibilitychange', this.#visibilityChange);
         }
