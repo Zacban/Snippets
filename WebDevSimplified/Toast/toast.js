@@ -15,10 +15,12 @@ export default class Toast {
     #timeVisible = 0;
     #autoClose;
     #progressInterval;
+    #visibilityChange
 
     #isPaused = false;
     #unpause;
     #pause;
+    #shouldUnPause
 
     constructor(options) {
         this.#toastElem = document.createElement('div');
@@ -29,6 +31,9 @@ export default class Toast {
         this.#removeBinded = this.remove.bind(this);
         this.#unpause = () => this.#isPaused = false;
         this.#pause = () => this.#isPaused = true;
+        this.#visibilityChange = () => {
+            this.#shouldUnPause = document.visibilityState === 'visible';
+        }
         this.update({ ...DEFAULT_OPTIONS, ...options });
     }
 
@@ -40,6 +45,11 @@ export default class Toast {
         let lastTime;
 
         const func = time => {
+            if (this.#shouldUnPause) {
+                lastTime = null;
+                this.#shouldUnPause = false;
+            }
+
             if (lastTime == null) {
                 lastTime = time;
                 this.#autoCloseInterval = requestAnimationFrame(func);
@@ -101,7 +111,6 @@ export default class Toast {
     }
 
     set pauseOnHover(value) {
-        this.#toastElem.classList.toggle('can-close', value);
         if (value) {
             this.#toastElem.addEventListener('mouseover', this.#pause);
             this.#toastElem.addEventListener('mouseleave', this.#unpause);
@@ -109,6 +118,15 @@ export default class Toast {
         else {
             this.#toastElem.removeEventListener('mouseover', this.#pause);
             this.#toastElem.removeEventListener('mouseleave', this.#unpause);
+        }
+    }
+
+    set pauseOnHover(value) {
+        if (value) {
+            document.addEventListener('visibilitychange', this.#visibilityChange);
+        }
+        else {
+            document.removeEventListener('visibilitychange', this.#visibilityChange);
         }
     }
 
