@@ -1,5 +1,5 @@
 :root {
-  --bg-color: hsl(49 37% 94%);
+  --bg-color: rgb(0, 0, 0);
   --typewriterSpeed: 6s;
   --typewriterCharacters: 25;
 }
@@ -12,6 +12,7 @@ body {
   place-content: center;
   text-align: center;
   background: var(--bg-color);
+  color: whitesmoke;
 }
 
 h1 {
@@ -41,7 +42,7 @@ h1::before {
 
 h1::after {
   width: 0.125em;
-  background-color: black;
+  background-color: whitesmoke;
   animation: typewriter var(--typewriterSpeed)
       steps(var(--typewriterCharacters)) 1s forwards,
     blink 750ms steps(var(--typewriterCharacters)) infinite;
