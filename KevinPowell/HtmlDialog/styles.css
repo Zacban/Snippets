@@ -1,0 +1,21 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: brown;
+}
+
+dialog {
+  border-radius: 0.5rem;
+  max-width: 90vw;
+  position: absolute;
+  top: -10px;
+}
+
+.modal::backdrop {
+  background-color: purple;
+  opacity: 0.4;
+}
