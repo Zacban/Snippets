@@ -1,0 +1,35 @@
+body {
+    background-color: lightblue;
+}
+
+.cloud {
+    background-color: hsl(0, 0%, 0%, 0.4);
+    /* width: 50vw;
+    height: 50vh; */
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+}
+
+.cloud .popup {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    width: 40vw;
+    height: 20vw;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    padding:0;
+    margin:0;
+    box-shadow: 4px 4px 4px 1px hsl(20, 100%, 50%, .4);
+}
+
+.cloud .popup header h3 {
+    background-color: lime;
+    display:block;
+    margin:0;
+}

@@ -1,0 +1,29 @@
+:root {
+    --ff-primary: basic-sans, sans-serif;
+    --clr-primary: #ee6352;
+    --clr-body: #333;
+    --clr-bg: #ddd;
+    --spacer: 1rem;
+}
+
+*,*::before,*::after {
+    box-sizing:border-box;
+}
+
+h1, h2, h3, p {
+    margin:0;
+}
+
+.flow > * + * {
+
+}
+
+.content {
+    width: 50vw;
+    background-color: #fff;
+    margin: 0 auto;
+}
+
+body {
+    background-color: var(--clr-bg);
+}
